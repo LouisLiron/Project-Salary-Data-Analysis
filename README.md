@@ -32,7 +32,7 @@ The dataset was compiled by gathering information from various sources, such as 
 - Years of Experience 
 	- Rank
 		- Intern
-- Junior
+		- Junior
 		- Mid-level
 		- Senior
 		- Managerial	
@@ -68,11 +68,13 @@ According to the presented image, individuals holding a PhD degree earn the high
 
 ### Moderate category:
 ![Moderate](https://github.com/LouisLiron/Project-1/assets/124049051/c857e3a2-8295-4582-b9cf-22e491c6f899)
+
 Reiterating the information from the image, it is evident that PhD holders dominate the top position in terms of earning the highest salaries within the "Moderate" category. Conversely, individuals with a High school certificate hold the lowest position in this category.
 
 
 ### Low category:
 ![Low](https://github.com/LouisLiron/Project-1/assets/124049051/b3d0e536-fee1-4963-bdaf-f3ca63068245)
+
 In this case, individuals with a Bachelor's degree take the lead in terms of earning the highest salaries, although it is notable that the difference between the top three categories is not substantial. Following Bachelor's degree holders, we have Master's degree holders, then PhD holders, and finally individuals with a High school education having the lowest salaries.
 
 ### Conclusion
@@ -81,6 +83,7 @@ Across all three categories, High school education consistently lags behind, whi
 
 2. Is there a relationship between the years of experience and the salary taken?
 To facilitate analysis, the variable "Years of Experience" was segmented into smaller intervals. Now, let's delve directly into the findings.
+
 ![Picture3](https://github.com/LouisLiron/Project-1/assets/124049051/b9eb5afb-daee-4844-bfe6-ec9be5aca469)
 
 Based on the doughnut chart analysis, it is evident that individuals holding the "Executive" rank receive the highest salaries. Following them are individuals in the "Managerial" rank, then the "Senior" rank, the "Mid-level" rank, the "Junior" rank, and finally the interns. The associated years for each rank are as follows:
@@ -97,30 +100,31 @@ These findings clearly demonstrate that having a significant number of years of 
 
 3.	Which division pays the most and the least and why?
 ![Picture2](https://github.com/LouisLiron/Project-1/assets/124049051/de32ecf5-db84-4b43-916c-fe012d349e44)
+
 According to the presented chart, individuals in the "Director" division have the highest salaries, while those in the "Customer Care" division have the lowest. To understand the reasons behind this disparity, let's refer to another chart for further analysis.
 
 ![oK](https://github.com/LouisLiron/Project-1/assets/124049051/b3479af6-71b7-4d70-bd67-c22489b94981)
+
 The chart above provides insights into the composition of the "Director" division, where individuals with Bachelor's, Master's, and PhD degrees are included. In total, there are 443 individuals in this division, out of which 247 hold a PhD degree. As previously established, PhD holders are known to receive high salaries, and their representation of 55.7% within the division significantly contributes to the overall higher salary figures. Additionally, there are 138 individuals with a Master's degree and 53 individuals with a Bachelor's degree, all of whom also receive high salaries.
 On the other hand, the majority of individuals in the "Customer Care" division have High School and Bachelor's degrees. As mentioned earlier, these two education categories tend to have lower salary ranges. The following chart corroborates this observation.
 
 ![ok 2](https://github.com/LouisLiron/Project-1/assets/124049051/50b3e645-39a5-431c-928a-1f3fabb7ca5c)
+
 ### Conclusion
 The highest salaries are earned by individuals in the "Director" Division, which comprises positions such as Directors, Operation Directors, CEOs, Marketing Directors, and similar roles. Conversely, the individuals in the "Customer Care" Division, which includes positions like Customer Care Representatives, Delivery Drivers, Customer Service Representatives, etc., receive comparatively lower salaries. The discrepancy in salary levels can be attributed to the level of education held by individuals in these divisions.
 
 
+
 4.	Who is taking the least and what's their demographics?
 From my analysis, I discovered that the individual taking the least salary has the following credentials;
-1.	Gender: Male
-2.	Age: 29
-3.	Education Level: Bachelor’s
-4.	Job Title: Junior Business Operations Analyst
-5.	Divisions: Business
-6.	Years of Experience: 1.5
-7.	Rank: Junior
-8.	Salary: 350
-9.	Salary Division: Low
+	|Gender|Age|Education Level|Job Title|Divisions|Years of Experience|Rank|Salary|Salary Division|
+	|--------|--------|--------|--------|--------|--------|--------|--------|--------|
+	|Male|29|Bachelor’s|Junior Business Operations Analyst|Business|1.5|Junior|350|Low|
+	
+	
 
-Analyzing the demographics of this individual, several observations can be made. Despite having an Education Level that is not at its lowest, the combination of their years of experience and job as a Junior Business Operations Analyst seems to hinder their prospects.
+
+Analyzing the demographics of this individual, several observations can be made. Despite having an Education Level that is not at its lowest, the combination of his years of experience and job as a Junior Business Operations Analyst seems to hinder their prospects.
 
 
 5.	Which gender is receiving the highest compensation and what are the reasons behind it?
