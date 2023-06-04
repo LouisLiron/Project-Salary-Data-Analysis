@@ -110,3 +110,67 @@ ORDER BY 2 DESC
 |Master's|1858|
 |PhD|1369|
 |High School|416|
+
+~~~SQL
+--Looking at the various divisions with a few descriptive stats
+SELECT DISTINCT
+    Divisions AS Divisions, 
+    AVG(Salary) OVER(PARTITION BY Divisions) AS Division_avg,
+    MIN(Salary) OVER(PARTITION BY Divisions) AS Division_min,
+    MAX(Salary) OVER(PARTITION BY Divisions) AS Division_max
+FROM 
+    Salary_Data AS sd
+ORDER BY 2 DESC
+~~~
+**Results**
+|Divisions|Division_avg|Division_min|Division_max|
+|--------|--------|--------|--------|
+|Director|155790|70000|250000|
+|Science and Analytics|145902|35000|240000|
+|Engineering|131933|40000|210000|
+|Managerial|131058|579|250000|
+|Finance|88475|40000|200000|
+|Operations|81500|35000|190000|
+|Developer|79378|550|178284|
+|Business|78343|350|170000|
+|HR|74583|500|180000|
+|Marketing|69868|35000|160000|
+|Accountant|62000|35000|95000|
+|Sales|35337|25000|160000|
+|Customer Care|26479|25000|45000|
+
+~~~SQL
+--Looking at education Level and a few descriptive stats
+SELECT DISTINCT
+    Education_Level AS Education_level, 
+    AVG(Salary) OVER(PARTITION BY Education_Level) AS Education_level_avg,
+    MIN(Salary) OVER(PARTITION BY Education_Level) AS Education_level_min,
+    MAX(Salary) OVER(PARTITION BY Education_Level) AS Education_level_max
+FROM 
+    Salary_Data AS sd
+ORDER BY 2 DESC
+~~~
+**Results**
+|Education_level|Education_level_avg|Education_level_min|Education_level_max|
+|--------|--------|--------|--------|
+|PhD|165651|579|250000|
+|Master's|130078|32000|228000|
+|Bachelor's|95083|350|250000|
+|High School|34376|25000|165919|
+
+~~~SQL
+--displaying the gender and a few descriptive stats
+SELECT DISTINCT
+    Gender AS Gender,
+    PERCENTILE_CONT(0.25) WITHIN GROUP (ORDER BY Salary) OVER (PARTITION BY Gender) AS Q1_Salary,
+    PERCENTILE_CONT(0.50) WITHIN GROUP (ORDER BY Salary) OVER (PARTITION BY Gender) AS Median_Salary,
+    PERCENTILE_CONT(0.75) WITHIN GROUP (ORDER BY Salary) OVER (PARTITION BY Gender) AS Q3_Salary
+FROM 
+    Salary_Data AS sd
+ORDER BY 3 DESC
+~~~
+**Results**
+|Gender|Q1_Salary|Median_Salary|Q3_Salary|
+|--------|--------|--------|--------|
+|Male|75000|120000|170000|
+|Female|60000|105000|150000|
