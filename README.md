@@ -144,7 +144,94 @@ Analyzing the demographics of this individual, several observations can be made.
 
 Based on the provided table, it can be observed that males tend to receive higher salaries. This can be attributed to the fact that males outnumber females in terms of holding PhD degrees. As established earlier, individuals with PhD degrees generally command higher salaries. While females lead in the number of Master's and High school degree holders as well, males particularly dominate in the Bachelor's degree category. The larger presence of PhD holders among males significantly contributes to higher average salary figures for males compared to females.
 
+## Descriptive Analysis
+Mean:
+~~~SQL
+SELECT 
+    ROUND(AVG(Salary), 1) AS Mean 
+FROM Salary_Data;
+~~~
+**Results**
+|Mean|
+|--------|
+|115547.5|
+
+The mean of 115547.5 suggests that, on average, the individuals in the Salary Dataset earn approximately $115,547.5. This value provides a measure of central tendency for the salaries in the dataset and can be useful in understanding the typical salary level.
+
+Median:
+~~~SQL
+--Median of the dataset
+SELECT TOP 1
+    PERCENTILE_CONT(0.5) WITHIN GROUP (ORDER BY Salary) OVER() AS Median
+FROM Salary_Data
+~~~
+**Results**
+|Median|
+|--------|
+|115000|
+
+The median value of 115,000 suggests that half of the individuals in the Salary Dataset earn less than 115,000, while the other half earn more than 115,000. It provides a measure of the central tendency that is not influenced by extreme values or outliers, making it useful for understanding the typical salary level.
+
+Mode:
+~~~SQL
+
+--mode of the dataset
+SELECT 
+	Salary, 
+	COUNT(*) AS Frequency
+FROM Salary_Data
+GROUP BY Salary
+HAVING COUNT(*) = (
+    SELECT MAX(Frequency)
+    FROM (
+        SELECT Salary, COUNT(*) AS Frequency
+        FROM Salary_Data
+        GROUP BY Salary
+    ) AS Subquery
+);
+~~~
+**Results**
+|Salary|Frequency|
+|--------|--------|
+|140000|287|
+
+The mode value of 140,000 indicates that this salary amount occurs most frequently in your dataset. Specifically, out of all the individuals in your dataset, 287 individuals have a salary of 140,000.
+
+Skewness:
+~~~SQL
+
+--skewness of the dataset
+SELECT 
+    (SUM((Salary - Mean) * (Salary - Mean)) / (COUNT(*) * POWER(STDEV(Salary), 2))) AS Skewness
+FROM 
+    Salary_Data
+CROSS JOIN (SELECT AVG(Salary) AS Mean FROM Salary_Data) AS Subquery;
+~~~
+**Results**
+|Skewness|
+|--------|
+|0.999849939975993|
+
+A skewness value of 0.999849939975993 suggests that the distribution of salaries in the dataset is positively skewed. Positive skewness means that the tail of the distribution extends towards higher values, indicating that there are more salaries towards the lower end of the scale and fewer salaries towards the higher end.
+
+Kurtosis:
+~~~SQL
+SELECT 
+    (SUM((Salary - Mean) * (Salary - Mean) * (Salary - Mean) * (Salary - Mean)) / (COUNT(*) * POWER(STDEV(Salary), 4))) - 3 AS Kurtosis
+FROM 
+    Salary_Data
+CROSS JOIN (SELECT AVG(Salary) AS Mean FROM Salary_Data) AS Subquery;
+~~~
+**Results**
+|Kurtosis|
+|--------|
+|-1.16690351743838|
+
+A kurtosis value of -1.16690351743838 suggests that the distribution of salaries in the dataset has negative kurtosis. Negative kurtosis indicates that the distribution has lighter tails and a flatter peak compared to a normal distribution.
+
+A negative kurtosis value means that the dataset has fewer extreme outliers or extreme values compared to a normal distribution. It indicates a relatively more dispersed or flat distribution of data.
 
 ## Overall Conclusion
 Based on the dataset, it is evident that several factors, such as Education Level and Division or industry affiliation, significantly influence the amount of salary received by an individual. Achieving high scores in these areas is crucial to ensure a comfortable level of compensation. Thank you for looking at this project. Have a wonderful day!
+
 
