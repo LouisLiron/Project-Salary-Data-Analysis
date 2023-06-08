@@ -2,14 +2,14 @@
 --Is there a relationship between the education levels and the salary taken?
 select 
   Education_Level as Education_Level,
-  ROUND(AVG(Salary), 0) AS Salary_Taken
+  ROUND(AVG(Salary), 0) AS Average_salary_Taken
 FROM 
   Salary_Data
 GROUP BY [Education_Level]
 ORDER BY 2 DESC
 ~~~
 **Results**
-|Education_Level|Salary_Taken|
+|Education_Level|Average_salary_Taken|
 |--------|--------|
 |PhD|165651|
 |Master's|130078|
