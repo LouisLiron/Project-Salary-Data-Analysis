@@ -234,4 +234,5 @@ A negative kurtosis value means that the dataset has fewer extreme outliers or e
 ## Overall Conclusion
 Based on the dataset, it is evident that several factors, such as Education Level and Division or industry affiliation, significantly influence the amount of salary received by an individual. Achieving high scores in these areas is crucial to ensure a comfortable level of compensation. Thank you for looking at this project. Have a wonderful day!
 
-
+## Dashboard
+Access an interactive dashboard here; https://public.tableau.com/app/profile/louis.baddoo/viz/Salary_DataDashboard/Dashboard1
