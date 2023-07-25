@@ -236,3 +236,6 @@ Based on the dataset, it is evident that several factors, such as Education Leve
 
 ## Dashboard
 Access an interactive dashboard here; https://public.tableau.com/app/profile/louis.baddoo/viz/Salary_DataDashboard/Dashboard1
+
+## Presentation Document
+Also access a full presentation on this analysis here: https://bit.ly/472wQqC
